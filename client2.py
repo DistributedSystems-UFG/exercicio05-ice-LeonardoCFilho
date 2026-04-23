@@ -1,10 +1,11 @@
 import sys, Ice
 import Demo
- 
+from const import *
+
 communicator = Ice.initialize(sys.argv)
 
-base1 = communicator.stringToProxy("SimplePrinter1:tcp -h 98.90.53.6 -p 11000")
-base2 = communicator.stringToProxy("SimplePrinter2:tcp -h 98.90.53.6 -p 11000")
+base1 = communicator.stringToProxy(f"SimplePrinter1:tcp -h 98.90.53.6 -p {DOOR}")
+base2 = communicator.stringToProxy(f"SimplePrinter2:tcp -h 98.90.53.6 -p {DOOR}")
 printer1 = Demo.PrinterPrx.checkedCast(base1)
 printer2 = Demo.PrinterPrx.checkedCast(base2)
 if (not printer1) or (not printer2):
