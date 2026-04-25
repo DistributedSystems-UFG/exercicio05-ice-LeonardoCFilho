@@ -6,7 +6,7 @@ class PrinterI(Demo.Printer):
     def printString(self, s, current=None):
         print(s)
         return s
-    
+
     def printUpperCase(self, s, current=None): # Novo
         print(s.upper())
         return s.upper()

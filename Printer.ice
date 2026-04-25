@@ -1,11 +1,11 @@
 module Demo
 {
     interface Printer
-    {
-        void printString(string s);
+    { // Compatibilidade com o ex.6
+        string printString(string s);
 
         // Novo
-        void printUpperCase(string s);
+        string printUpperCase(string s);
     }
     
     // Novo
